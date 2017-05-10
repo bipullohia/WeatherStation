@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText zipcodeEdittext;
     public static ArrayList<String> stationsArrayList = new ArrayList<>();
+    public static ArrayList<String> cityArrayList = new ArrayList<>();
+    public static ArrayList<String> stateArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,13 +123,13 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("job", String.valueOf(jsonArray.getJSONObject(i)));
 
                     stationsArrayList.add(i, jsonArray.getJSONObject(i).getString("neighborhood"));
+                    cityArrayList.add(i, jsonArray.getJSONObject(i).getString("city"));
+                    stateArrayList.add(i, jsonArray.getJSONObject(i).getString("state"));
 
                 }
 
                 Log.i("pwsJSONObject", String.valueOf(stationsJOB));
                 Log.i("stationJSONArray", String.valueOf(jsonArray));
-
-
 
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
@@ -139,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            super.onPostExecute(s);
 
             Intent intent = new Intent(getApplicationContext(), WeatherStationListActivity.class);
             startActivity(intent);
