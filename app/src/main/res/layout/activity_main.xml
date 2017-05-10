@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    tools:context="com.example.bipullohia.weatherstation.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:textSize="24sp"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_the_zipcode" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/zipcodeEdittext"
+        android:hint="@string/enter_here"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:maxLength="6"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:id="@+id/findstationButton"
+        android:layout_marginTop="25dp"
+        android:layout_height="wrap_content"
+        android:text="@string/find_stations"/>
+
+</LinearLayout>
